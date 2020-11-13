@@ -1,35 +1,32 @@
-""""
-PSEUDOCODE
-
-create function option1:
-    initialize daily pay = 100
-    initialize work days = 10
-    total pay = daily pay * work days
-    return total pay
-
-create function option1:
-    initialzie pay for each day = 1
-    initialize work days = 10
-    initialize total pay = 0
-    intiialzie day counter = 0
-    while day counter less than work days:
-        increment day counter + 1
-        pay for each day = 1 * 2^day counter (Doubling using exponential function)
-        total pay + pay for each day
-    return total pay
-create funtion main:
-    run option1
-    run option2
-    print option1 result
-    print option2 result
-    if option1 result > option 2 result:
-        print option1 better
-    elif option1 result < option2 result:
-        print option2 better
-    else:
-        print same pay
-
-call function main
-
-END PSEUDOCODE
 """
+EXAM END
+"""
+
+def option1():
+    daily_pay = 100
+    work_days = 10
+    total_pay = daily_pay * work_days
+    return total_pay
+def option2():
+    day_specific_pay = 1
+    work_days = 9
+    day_counter = 0
+    total_pay = 1
+    while day_counter < work_days:
+        day_counter += 1
+        day_specific_pay = 2**day_counter
+        total_pay += day_specific_pay
+    return total_pay
+def main():
+    option1_pay = option1()
+    option2_pay = option2()
+    print(("Option 1 pays: ${0:.2f}").format(option1_pay))
+    print(("Option 2 pays: ${0:.2f}").format(option2_pay))
+    if option1_pay > option2_pay:
+        print("Option 1 is better.")
+    elif option1_pay < option2_pay:
+        print("Option 2 is better.")
+    else:
+        print("Option 1 and Option 2 pay the same ")
+
+main()
